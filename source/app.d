@@ -30,18 +30,7 @@ void main() {
     IndexController index = new IndexController;
 
     assignRoutes!(typeof(index)).eval(index, router);
-    /*
-    foreach(member; __traits(allMembers, typeof(index))) {
-        static if(hasAnnotation!(__traits(getMember, typeof(index), member), Route) == true) {
-            Route r = getAnnotation!(__traits(getMember, index, member), Route);
-            router.get(r.path, &__traits(getMember, index, member));
-        }
-    }
-    */
-    /*
-    pragma(msg, __traits(getMember, typeof(index), "home"));
-    assignRoutes!(typeof(index)).eval(router, router);
-*/
+
     v.listenHTTP(settings, router);
     v.runEventLoop();
 }

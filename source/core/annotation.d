@@ -1,7 +1,11 @@
-template hasAnnotation(alias f, A) {
-    static bool eval() {
-        foreach(a; __traits(getAttributes, f)) {
-            static if(is(a == A) || is(typeof(a) == A)) {
+template hasAnnotation(alias f, A) 
+{
+    static bool eval() 
+    {
+        foreach(a; __traits(getAttributes, f)) 
+        {
+            static if(is(a == A) || is(typeof(a) == A)) 
+            {
                 return true;
             }
         }
@@ -12,10 +16,14 @@ template hasAnnotation(alias f, A) {
     enum bool hasAnnotation = eval();
 }
 
-template getAnnotation(alias f, A) {
-    static A eval() {
-        foreach(a; __traits(getAttributes, f)) {
-            static if(is(typeof(a) == A)) {
+template getAnnotation(alias f, A) 
+{
+    static A eval() 
+    {
+        foreach(a; __traits(getAttributes, f)) 
+        {
+            static if(is(typeof(a) == A)) 
+            {
                 return a;
             }
         }

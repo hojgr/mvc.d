@@ -8,7 +8,8 @@ import annotation;
 
 
 
-void main() {
+void main() 
+{
     auto settings = new v.HTTPServerSettings;
     settings.bindAddresses = ["127.0.0.1"];
     settings.port = 8080;

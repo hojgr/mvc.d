@@ -1,2 +1,3 @@
-interface Controller {
+interface Controller 
+{
 }

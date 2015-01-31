@@ -1,3 +1,4 @@
-class Dependency {
+class Dependency 
+{
 
 }

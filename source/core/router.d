@@ -1,5 +1,6 @@
 import v = vibe.d;
 import std.stdio;
+import annotation;
 
 struct Route { 
     string path;
@@ -21,5 +22,18 @@ class Router : v.HTTPServerRequestHandler {
             routes[req.path]();
         }
     }
+
+
 }
 
+Router addRoutes(alias ctrl)(Router router) {
+    alias ControllerType = typeof(ctrl);
+    foreach(member; __traits(allMembers, ControllerType)) {
+        static if(hasAnnotation!(__traits(getMember, ControllerType, member), Route) == true) {
+            Route r = getAnnotation!(__traits(getMember, ctrl, member), Route);
+            router.get(r.path, &__traits(getMember, ctrl, member));
+        }
+    }
+
+    return router;
+}

@@ -5,6 +5,7 @@ import router;
 class IndexController : Controller {
 
     string x;
+    string latest;
 
     this() {
         x = "index";
@@ -12,12 +13,14 @@ class IndexController : Controller {
 
     @Route("/home")
     void home() {
-        writeln(x ~ "->home");
+        writeln(x ~ "->home ; latest: " ~ latest);
+        latest = "home";
     }
 
     @Route("/hell")
     void hellyeah() {
-        writeln(x ~ "->hellya");
+        writeln(x ~ "->hellya ; latest: " ~ latest);
+        latest = "hell";
     }
 
 }

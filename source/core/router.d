@@ -27,7 +27,8 @@ class Router : v.HTTPServerRequestHandler
             writeln("404 - Path " ~ req.path ~ " not defined!");
         } else 
         {
-            routes[req.path]();
+            string output = routes[req.path]();
+            res.writeBody(output);
         }
     }
 }

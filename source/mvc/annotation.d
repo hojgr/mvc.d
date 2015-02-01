@@ -56,3 +56,17 @@ template getAnnotation(alias f, A)
 
     enum A getAnnotation = eval();
 }
+
+unittest {
+    @(1)
+    void i_annotatedTestFunc() {}
+
+    assert(getAnnotation!(i_annotatedTestFunc, int) == 1);
+
+    struct SAnnot { int num; }
+
+    @SAnnot(2)
+    void s_annotatedTestFunc() {}
+
+    assert(getAnnotation!(s_annotatedTestFunc, SAnnot).num == 2);
+}

@@ -1,6 +1,7 @@
 {
 	"name": "blog",
 	"description": "A simple blog written in MVC.d which is WIP.",
+    "targetPath": "bin",
 	"copyright": "Copyright © 2015, teb",
 	"authors": ["teb"],
 	"dependencies": {

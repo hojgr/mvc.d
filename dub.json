@@ -1,6 +1,6 @@
 {
-	"name": "csgo",
-	"description": "A simple vibe.d server application.",
+	"name": "blog",
+	"description": "A simple blog written in MVC.d which is WIP.",
 	"copyright": "Copyright © 2015, teb",
 	"authors": ["teb"],
 	"dependencies": {

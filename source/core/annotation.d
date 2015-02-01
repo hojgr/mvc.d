@@ -1,3 +1,5 @@
+module mvc.annotation;
+
 template hasAnnotation(alias f, A) 
 {
     static bool eval() 

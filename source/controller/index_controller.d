@@ -1,6 +1,8 @@
+module blog.controller.index;
+
 import std.stdio;
-import controller;
-import router;
+import mvc.controller;
+import mvc.router;
 
 class IndexController : Controller 
 {
@@ -14,17 +16,21 @@ class IndexController : Controller
     }
 
     @Route("/home")
-    void home() 
+    string home() 
     {
-        writeln(x ~ "->home ; latest: " ~ latest);
+        string output = x ~ "->home ; latest: " ~ latest;
         latest = "home";
+
+        return output;
     }
 
     @Route("/hell")
-    void hellyeah() 
+    string hellyeah() 
     {
-        writeln(x ~ "->hellya ; latest: " ~ latest);
+        string output = x ~ "->hellya ; latest: " ~ latest;
         latest = "hell";
+
+        return output;
     }
 
 }

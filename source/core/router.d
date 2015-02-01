@@ -1,6 +1,8 @@
+module mvc.router;
+
 import v = vibe.d;
 import std.stdio;
-import annotation;
+import mvc.annotation;
 
 struct Route 
 { 
@@ -9,9 +11,9 @@ struct Route
 
 class Router : v.HTTPServerRequestHandler 
 {
-    void delegate()[string] routes;
+    string delegate()[string] routes;
 
-    void get(string path, void delegate() func) 
+    void get(string path, string delegate() func) 
     {
         assert(path !in routes, "Route " ~ path ~ " is already defined!");
         writeln("Adding route " ~ path);

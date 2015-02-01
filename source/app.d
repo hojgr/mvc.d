@@ -1,12 +1,7 @@
 import v = vibe.d;
-import std.stdio;
-import index_controller;
-import controller;
-import std.conv;
-import router;
-import annotation;
-
-
+import blog.controller.index;
+import mvc.router;
+import mvc.annotation;
 
 void main() 
 {

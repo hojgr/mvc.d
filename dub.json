@@ -1,11 +1,12 @@
 {
-	"name": "blog",
-	"description": "A simple blog written in MVC.d which is WIP.",
+    "name": "blog",
+    "description": "A simple blog written in MVC.d which is WIP.",
     "targetPath": "bin",
-	"copyright": "Copyright © 2015, teb",
-	"authors": ["teb"],
-	"dependencies": {
-		"vibe-d": "~>0.7.19"
-	},
-	"versions": ["VibeCustomMain"]
+    "copyright": "Copyright © 2015, teb",
+    "authors": ["teb"],
+    "dependencies": {
+        "vibe-d": "~>0.7.19",
+        "dmocks-revived": "~master"
+    },
+    "versions": ["VibeCustomMain"]
 }

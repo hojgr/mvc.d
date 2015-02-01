@@ -8,7 +8,7 @@ class Router : v.HTTPServerRequestHandler
 {
     string delegate()[string] routes;
 
-    void get(string path, string delegate() func) 
+    void get(string path, string delegate() func)
     {
         assert(path !in routes, "Route " ~ path ~ " is already defined!");
         writeln("Adding route " ~ path);

@@ -1,5 +1,5 @@
 import v = vibe.d;
-import blog.controller.index;
+import blog.controller.index_controller;
 import mvc.routing.router;
 import mvc.routing.utils;
 

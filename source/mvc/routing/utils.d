@@ -41,7 +41,8 @@ unittest {
     {
         auto mocker = new Mocker();    
 
-        class Ctrl : Controller {
+        class Ctrl : Controller 
+        {
             @Route("/wat")
             string rt() { return "route"; }
         }

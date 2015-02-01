@@ -1,13 +1,8 @@
-module mvc.router;
+module mvc.routing.router;
 
 import v = vibe.d;
 import std.stdio;
 import mvc.annotation;
-
-struct Route 
-{ 
-    string path;
-}
 
 class Router : v.HTTPServerRequestHandler 
 {
@@ -31,19 +26,8 @@ class Router : v.HTTPServerRequestHandler
             res.writeBody(output);
         }
     }
+
+
 }
 
-Router addRoutes(alias ctrl)(Router router) 
-{
-    alias ControllerType = typeof(ctrl);
-    foreach(member; __traits(allMembers, ControllerType)) 
-    {
-        static if(hasAnnotation!(__traits(getMember, ControllerType, member), Route) == true) 
-        {
-            Route r = getAnnotation!(__traits(getMember, ctrl, member), Route);
-            router.get(r.path, &__traits(getMember, ctrl, member));
-        }
-    }
 
-    return router;
-}

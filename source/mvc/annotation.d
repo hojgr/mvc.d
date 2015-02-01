@@ -18,6 +18,28 @@ template hasAnnotation(alias f, A)
     enum bool hasAnnotation = eval();
 }
 
+unittest { 
+    /* Tests function annotated with an instance of int */
+    @(1)
+    void i_annotatedTestFunc() {}
+    void i_nonAnnotatedTestFunc() {}
+
+    assert(hasAnnotation!(i_annotatedTestFunc, int));
+    assert(!hasAnnotation!(i_nonAnnotatedTestFunc, int));
+
+
+    /* Tests function annotated with an enum type */
+    enum EAnnotation;
+
+    @EAnnotation
+    void annotatedTestFunc() {}
+    void nonAnnotatedTestFunc() {}
+
+    assert(hasAnnotation!(annotatedTestFunc, EAnnotation));
+    assert(!hasAnnotation!(nonAnnotatedTestFunc, EAnnotation));
+
+}
+
 template getAnnotation(alias f, A) 
 {
     static A eval() 

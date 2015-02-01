@@ -1,8 +1,8 @@
-module blog.controller.index;
+module blog.controller.index_controller;
 
 import std.stdio;
 import mvc.controller;
-import mvc.router;
+import mvc.routing.route;
 
 class IndexController : Controller 
 {
